@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.write("hiiiiiiiiii");
+  res.send("hiiiiiiiiii");
 });
 
 app.post("/api/users", (req, res) => {
@@ -17,7 +17,9 @@ app.post("/api/users", (req, res) => {
   }, 1500);
 });
 
-const PORT = process.env.PORT || "5000";
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server Running on Port 5000");
 });
+
+console.log(process.env.PORT);
